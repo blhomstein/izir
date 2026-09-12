@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+.nyc_output/
+*.tsbuildinfo
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+
+# Local caches and temporary files
+.cache/
+.tmp/
+tmp/
+*.log
+
+# Editor settings
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Agent-local configuration
+.agents/
+.codex/
+
+# Local project documentation and reference exports
+*.md
+*.pdf
+
+# Architecture decisions are delivery evidence and belong in the repository
+!docs/adr/*.md
