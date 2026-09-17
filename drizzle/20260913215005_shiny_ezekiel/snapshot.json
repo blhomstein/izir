@@ -1,0 +1,312 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "4b605b38-0157-4cf2-bcff-27ac4ad4c5ae",
+  "prevIds": [
+    "bc93e96e-35da-4998-b574-9adc8069b6b3"
+  ],
+  "ddl": [
+    {
+      "values": [
+        "active",
+        "archived"
+      ],
+      "name": "organization_status",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "employment_sources",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "organizations",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "organization_id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "varchar(64)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "adapter_key",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "jsonb",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "config",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "integer",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "config_schema_version",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "boolean",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "true",
+      "generated": null,
+      "identity": null,
+      "name": "enabled",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "updated_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "type": "varchar(255)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "name",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "type": "organization_status",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'active'",
+      "generated": null,
+      "identity": null,
+      "name": "status",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "type": "timestamp with time zone",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "updated_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "organization_id"
+      ],
+      "schemaTo": "public",
+      "tableTo": "organizations",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "RESTRICT",
+      "name": "employment_sources_organization_id_organizations_id_fk",
+      "entityType": "fks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "employment_sources_pkey",
+      "schema": "public",
+      "table": "employment_sources",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "organizations_pkey",
+      "schema": "public",
+      "table": "organizations",
+      "entityType": "pks"
+    },
+    {
+      "nameExplicit": true,
+      "columns": [
+        "organization_id",
+        "adapter_key"
+      ],
+      "nullsNotDistinct": false,
+      "name": "employment_sources_organization_adapter_unique",
+      "entityType": "uniques",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "char_length(\"name\") > 0",
+      "name": "employment_sources_name_not_blank",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "\"name\" = btrim(\"name\")",
+      "name": "employment_sources_name_trimmed",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "\"adapter_key\" in ('greenhouse')",
+      "name": "employment_sources_adapter_key_allowed",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "jsonb_typeof(\"config\") = 'object'",
+      "name": "employment_sources_config_is_object",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "\"config_schema_version\" > 0",
+      "name": "employment_sources_config_schema_version_positive",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "employment_sources"
+    },
+    {
+      "value": "char_length(\"name\") > 0",
+      "name": "organizations_name_not_blank",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "organizations"
+    },
+    {
+      "value": "\"name\" = btrim(\"name\")",
+      "name": "organizations_name_trimmed",
+      "entityType": "checks",
+      "schema": "public",
+      "table": "organizations"
+    }
+  ],
+  "renames": []
+}
